@@ -29,7 +29,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, fname, lname from customer";
+$sql = "SELECT id, fname, lname from Customer";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
