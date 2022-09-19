@@ -50,6 +50,7 @@ $conn->close();
 ?>
   </tbody>
     </table>
+    
     <h1>Hello, world!</h1>
     <form action="handlepost.php" method="get">
 Name: <input type="text" name="name"><br>
