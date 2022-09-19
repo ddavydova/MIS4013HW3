@@ -17,7 +17,7 @@
   <tbody>
     <?php
 $servername = "localhost";
-$username = "davyddov_davyddova";
+$username = "davyddov_user1";
 $password = "dasha12345!";
 $dbname = "davyddov_HW3";
 
@@ -28,7 +28,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, fname from customer";
+$sql = "SELECT id, fname, lname from customer";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -38,6 +38,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["id"]?></td>
     <td><?=$row["fname"]?></td>
+    <td><?=$row["lname"]?></td>
   </tr>
 <?php
   }
