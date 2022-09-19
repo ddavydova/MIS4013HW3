@@ -51,6 +51,52 @@ $conn->close();
   </tbody>
     </table>
     
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Customer ID</th>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+$servername = "localhost";
+$username = "davyddov_davyddova";
+$password = "dasha12345!";
+$dbname = "davyddov_HW3";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, orderid, productid, quantity from Customer";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+?>
+  <tr>
+    <td><?=$row["id"]?></td>
+    <td><?=$row["orderid"]?></td>
+    <td><?=$row["productid"]?></td>
+    <td><?=$row["quantity"]?></td>
+  </tr>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+  </tbody>
+    </table>
+    
     <h1>Hello, world!</h1>
     <form action="handlepost.php" method="get">
 Name: <input type="text" name="name"><br>
