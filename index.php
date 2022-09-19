@@ -74,7 +74,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, orderid, productid, quantity from Order";
+$sql = "SELECT id, orderid, pid, quantity from Order";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
