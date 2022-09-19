@@ -74,7 +74,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, orderid, productid, quantity from Customer";
+$sql = "SELECT id, orderid, productid, quantity from Order";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -84,7 +84,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["id"]?></td>
     <td><?=$row["orderid"]?></td>
-    <td><?=$row["productid"]?></td>
+    <td><?=$row["pid"]?></td>
     <td><?=$row["quantity"]?></td>
   </tr>
 <?php
