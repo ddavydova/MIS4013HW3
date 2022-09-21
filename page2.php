@@ -28,7 +28,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
  $iid = $_GET['id'];
-$sql = "select o.quantity, order_id, c.lname from order o join customer c on o.customer_id = c.customer_id where c.customer_id=" . $iid;
+$sql = "select quantity, order_id, c.lname from order o join customer c on o.customer_id = c.customer_id where c.customer_id=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
 
