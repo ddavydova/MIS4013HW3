@@ -9,9 +9,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Customer's Last Name</th>
     </tr>
   </thead>
   <tbody>
