@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["order_od"]?></td>
+    <td><?=$row["order_id"]?></td>
     <td><?=$row["product_id"]?></td>
     <td><?=$row["pname"]?></td>
     <td><?=$row["quantity"]?></td>
