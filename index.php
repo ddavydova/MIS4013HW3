@@ -28,7 +28,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, fname, lname from Customer";
+$sql = "SELECT customer_id, fname, lname from Customer";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["id"]?></td>
+    <td><?=$row["customer_id"]?></td>
     <td><?=$row["fname"]?></td>
     <td><?=$row["lname"]?></td>
   </tr>
