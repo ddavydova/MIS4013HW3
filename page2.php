@@ -29,7 +29,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+ $iid = $_GET['id'];
 $sql = "select o.quantity, o.product_id, order_id, p.pname, c.lname from order o join customer c on o.customer_id = c.customer_id join product p on p.product_id = o.product_id where c.customer_id=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
