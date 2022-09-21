@@ -3,17 +3,6 @@
 
 
 <div class="display-4">
-<br>
-<?php
-date_default_timezone_set("America/Chicago");
-echo "The time is " . date("h:i:sa");
-?>
-  
- <br>
-<?php
-$d1=strtotime("December 25");
-$d2=ceil(($d1-time())/60/60/24);
-echo "There are " . $d2 ." days until Christmas!";
-?>
+  <p>Thank you for visiting my HW3 pages!</p>
   
 </div>
