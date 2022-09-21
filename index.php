@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["customer_id"]?></td>
     <td><?=$row["fname"]?></td>
-    <td><?=$row["lname"]?></td>
+    <td><a href="page2.php?id=<?=$row["customer_id"]?>"><?=$row["lname"]?></a></td>
   </tr>
 <?php
   }
