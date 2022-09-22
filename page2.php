@@ -13,6 +13,7 @@
       <th>Quantity</th>
       <th>Customer's Last Name</th>
       <th>Product Name</th>
+      <th>Supplier Name</th>
     </tr>
   </thead>
   <tbody>
@@ -29,7 +30,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
  $iid = $_GET['id'];
-$sql = "select o.quantity, order_id, c.lname, p.pname from Orders o join Customer c on o.customer_id = c.customer_id join Product p on o.product_id=p.product_id where o.customer_id=" . $iid;
+$sql = "select o.quantity, order_id, c.lname, p.pname, s.sname from Orders o join Customer c on o.customer_id = c.customer_id join Product p on o.product_id=p.product_id join Supplier s on s.supplier_id=p.supplier_id where o.customer_id=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
 
@@ -42,6 +43,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["quantity"]?></td>
     <td><?=$row["lname"]?></td>
     <td><?=$row["pname"]?></td>
+    <td><?=$row["sname"]?></td>
   </tr>
 <?php
   }
