@@ -7,7 +7,54 @@
 <br>
 <br>
 
+    <h1>Instructors</h1>
+<div class="card-group">
+    <?php
+$servername = "localhost";
+$username = "projecto_homework3";
+$password = "0w_zeP}]OVy0";
+$dbname = "projecto_homework3";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT order_id, quantity from Orders";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+?>
+   <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><?=$row["fname"]?></h5>
+      <p class="card-text"><ul>
+<?php
+    $section_sql = "select c.fname from Customer c join Orders o on c.customer_id = o.customer_id join Product p on p.product_id = o.product_id where i.instructor_id=" . $row["order_id"];
+    $section_result = $conn->query($section_sql);
+    
+    while($section_row = $section_result->fetch_assoc()) {
+      echo "<li>" . $section_row["order_id"] . "</li>";
+    }
+?>
+      </ul></p>
+  </div>
+    </div>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+  </card-group>
+
 <?php include("footer.php");?>
 
 </body>
 </html>
+
