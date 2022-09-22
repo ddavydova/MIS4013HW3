@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
     <td>
       <form method="post" action="postpage.php">
         <input type="hidden" name="id" value="<?=$row["customer_id"]?>" />
-        <input type="submit" value="Sections" />
+        <input type="submit" value="Orders" />
       </form>
     </td>
   </tr>
