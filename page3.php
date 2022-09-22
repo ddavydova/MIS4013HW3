@@ -22,7 +22,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT order_id, quantity from Orders";
+$sql = "SELECT fname, customer_id from Customer";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
       <h5 class="card-title"><?=$row["fname"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "select o.quantity from Customer c join Orders o on c.customer_id = o.customer_id join Product p on p.product_id = o.product_id where i.instructor_id=" . $row["order_id"];
+    $section_sql = "select o.quantity from Customer c join Orders o on c.customer_id = o.customer_id join Product p on p.product_id = o.product_id where i.instructor_id=" . $row["customer_id"];
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
