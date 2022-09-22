@@ -2,6 +2,9 @@
 <html>
 <head> <?php include("header.php");?></head>
   <body>
+<?php include("links.php");?>
+<br>
+<br>
     <h1>Orders</h1>
 <table class="table table-striped">
   <thead>
