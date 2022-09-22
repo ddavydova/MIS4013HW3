@@ -7,7 +7,7 @@
 <?php include("links.php");?>
 <br>
 <br>
- <h1>Courses</h1>
+ <h1>Customers</h1>
 <table class="table table-striped">
   <thead>
     <tr>
