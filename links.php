@@ -3,5 +3,8 @@
           <li class="nav-item">
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Main Page") {?>active<?php }?>" href="index.php">Home</a>
 	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Main Page") {?>active<?php }?>" href="page3.php">Cards View</a>
+	  </li>
 	</ul>
 </div>
