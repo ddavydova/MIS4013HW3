@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["fname"]?></td>
     <td><?=$row["lname"]?></td>
     <td>
-      <form method="post" action="page3.php">
+      <form method="post" action="postpage.php">
         <input type="hidden" name="id" value="<?=$row["customer_id"]?>" />
         <input type="submit" value="Sections" />
       </form>
